@@ -41,7 +41,6 @@
         .result {
             margin-top: 20px;
             padding: 15px;
-            background-color: #e7f7e7;
             border-radius: 4px;
             text-align: center;
         }
@@ -86,7 +85,6 @@
 
     <script>
         function calcularIMC() {
-            // Obtendo os valores do formulário
             const altura = parseFloat(document.getElementById('altura').value);
             const peso = parseFloat(document.getElementById('peso').value);
 
@@ -95,26 +93,34 @@
                 return;
             }
 
-            // Calculando o IMC
             const imc = peso / (altura * altura);
 
-            // Classificando o IMC
             let classificacao = '';
+            let resultColor = '';
+
             if (imc < 18.5) {
                 classificacao = 'MAGREZA';
+                resultColor = '#FFEB3B'; // Amarelo
             } else if (imc >= 18.5 && imc <= 24.9) {
                 classificacao = 'NORMAL';
+                resultColor = '#4CAF50'; // Verde
             } else if (imc >= 25 && imc <= 29.9) {
                 classificacao = 'SOBREPESO';
+                resultColor = '#FFCDD2'; // Vermelho Claro
             } else if (imc >= 30 && imc <= 39.9) {
                 classificacao = 'OBESIDADE';
+                resultColor = '#F44336'; // Vermelho Vivo
             } else if (imc >= 40) {
                 classificacao = 'OBESIDADE GRAVE';
+                resultColor = '#212121'; // Preto
             }
 
             // Exibindo o resultado
             document.getElementById('imcValue').innerText = `IMC: ${imc.toFixed(2)}`;
             document.getElementById('classification').innerText = `Classificação: ${classificacao}`;
+
+            // Alterando a cor do fundo de acordo com a classificação
+            document.getElementById('result').style.backgroundColor = resultColor;
 
             // Exibindo a área de resultados
             document.getElementById('result').style.display = 'block';
