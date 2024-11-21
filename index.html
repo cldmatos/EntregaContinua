@@ -52,15 +52,16 @@
         .btn {
             width: 100%;
             padding: 10px;
-            background-color: #f6ff00;
-            color: #000000;
+            background-color: #BEBEBE; /* Cinza */
+            color: #000000; /* Preto */
             border: none;
             border-radius: 4px;
-            font-size: 16px;
+            font-size: 20px;
+            font-weight: bold; /* Negrito */
             cursor: pointer;
         }
         .btn:hover {
-            background-color: #f6ff00;
+            background-color: #696969; /* Cinza mais escuro no hover */
         }
         table {
             width: 100%;
@@ -83,7 +84,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Calculadora de IMC</h2>
+        <h2>Calculadora de IMC (Peso)</h2>
         <form id="imcForm">
             <div class="form-group">
                 <label for="altura">Altura (em metros)</label>
@@ -93,7 +94,7 @@
                 <label for="peso">Peso (em kg)</label>
                 <input type="number" step="0.1" id="peso" name="peso" required>
             </div>
-            <button type="button" class="btn" id="calcularBtn" onclick="calcularIMC()">Calcular IMC</button>
+            <button type="button" class="btn" id="calcularBtn" onclick="calcularIMC()">CALCULAR IMC</button>
         </form>
 
         <div id="result" class="result" style="display: none;">
@@ -180,7 +181,7 @@
             document.getElementById('imcTable').style.display = 'table';
 
             // Mudando o texto do botão para "Novo Cálculo"
-            document.getElementById('calcularBtn').innerText = "Novo Cálculo";
+            document.getElementById('calcularBtn').innerText = "NOVO CÁLCULO";
             document.getElementById('calcularBtn').setAttribute("onclick", "novoCalculo()");
         }
 
