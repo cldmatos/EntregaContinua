@@ -14,7 +14,7 @@
         .container {
             width: 100%;
             max-width: 400px;
-            margin: 50px auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: white;
             border-radius: 8px;
@@ -27,10 +27,12 @@
             margin-bottom: 15px;
         }
         .form-group label {
-            display: block;
+            text-align: center;
+                display: block;
             font-size: 14px;
         }
         .form-group input {
+            text-align: center;
             width: 100%;
             padding: 8px;
             font-size: 16px;
@@ -84,16 +86,19 @@
 </head>
 <body>
     <div class="container">
-        <h2>Calculadora de IMC (Peso)</h2>
+        <h2>IMC - Índice de Massa Corporal</h2>
         <form id="imcForm">
             <div class="form-group">
+                <br>
                 <label for="altura">Altura (em metros)</label>
                 <input type="number" step="0.01" id="altura" name="altura" required>
             </div>
             <div class="form-group">
-                <label for="peso">Peso (em kg)</label>
+                <br>
+                <label for="peso">Peso (em quilos)</label>
                 <input type="number" step="0.1" id="peso" name="peso" required>
             </div>
+            <br>
             <button type="button" class="btn" id="calcularBtn" onclick="calcularIMC()">CALCULAR IMC</button>
         </form>
 
@@ -105,12 +110,12 @@
         <!-- Tabela com as faixas de IMC e cores (inicialmente oculta) -->
         <table id="imcTable">
             <thead>
-                <tr>
+                <tr align="center">
                     <th>Classificação</th>
                     <th>Faixa de IMC</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody align="center">
                 <tr style="background-color: #F44336;">
                     <td>Magreza</td>
                     <td>Menor que 18.5</td>
